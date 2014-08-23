@@ -77,6 +77,10 @@ def process_api_response(response):
         booklist[ISBN_13]['Cover'] = book['volumeInfo']['imageLinks']['thumbnail']
         booklist[ISBN_13]['ISBN_10'] = ISBN_10
         booklist[ISBN_13]['ISBN_13'] = ISBN_13
+        booklist[ISBN_13]['ID'] = book['id']
+        booklist[ISBN_13]['PublicDomain'] = book['accessInfo']['publicDomain']
+        booklist[ISBN_13]['epub'] = book['accessInfo']['epub']['isAvailable']
+
         #booklist[ISBN_13]['ASIN']= 'FutureAddition'
 
         # Write data to file
@@ -131,11 +135,13 @@ apiKey_googlebooks = get_api_key('google books')
 #9781429949620    # Words of Radience, ISBN13 from BN.com
 
 add_book(9780375984648)
-add_book(9780316235556)
+#add_book(9780316235556)
 add_book(9780449818404)
 add_book(9781429949620)
 add_book(9780698184947)
 add_book(9780375984631)
+
+add_book(9780316235556)
 
 # Idea List
 # 3) Search twitter /check author feeds for deals on their books?
