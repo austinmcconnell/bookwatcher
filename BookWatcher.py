@@ -81,7 +81,8 @@ def process_api_response(response):
         booklist[ISBN_13]['ID'] = book['id']
         booklist[ISBN_13]['PublicDomain'] = book['accessInfo']['publicDomain']
         booklist[ISBN_13]['epub'] = book['accessInfo']['epub']['isAvailable']
-
+        booklist[ISBN_13]['RatingsCount'] = book['volumeInfo']['ratingsCount']
+        booklist[ISBN_13]['AverageRating'] = book['volumeInfo']['averageRating']
         #booklist[ISBN_13]['ASIN']= 'FutureAddition'
 
         # Write data to file
