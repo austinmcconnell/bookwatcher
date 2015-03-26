@@ -79,8 +79,9 @@ def process_api_response(response):
         booklist[ISBN_13]['ISBN_10'] = ISBN_10
         booklist[ISBN_13]['ISBN_13'] = ISBN_13
         booklist[ISBN_13]['ID'] = book['id']
+        booklist[ISBN_13]['ETAG'] = book['etag']
         booklist[ISBN_13]['PublicDomain'] = book['accessInfo']['publicDomain']
-        booklist[ISBN_13]['epub'] = book['accessInfo']['epub']['isAvailable']
+        booklist[ISBN_13]['EPUB'] = book['accessInfo']['epub']['isAvailable']
         if 'ratingsCount' in book['volumeInfo']:
             booklist[ISBN_13]['RatingsCount'] = book['volumeInfo']['ratingsCount']
         if 'averageRating' in book['volumeInfo']:
